@@ -114,6 +114,7 @@ var rootjQuery,
 	};
 
 // Give the init function the jQuery prototype for later instantiation
+// jQuery.fn.init()的实例上调用构造函数jQuery()的原型方法和属性
 init.prototype = jQuery.fn;
 
 // Initialize central reference

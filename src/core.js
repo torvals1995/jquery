@@ -19,13 +19,15 @@ var version = "@VERSION",
 	rhtmlSuffix = /HTML$/i,
 
 	// Define a local copy of jQuery
+	// 定义变量：返回jQuery构造函数
 	jQuery = function( selector, context ) {
 
 		// The jQuery object is actually just the init constructor 'enhanced'
 		// Need init if jQuery is called (just allow error to be thrown if not included)
 		return new jQuery.fn.init( selector, context );
 	};
-
+// jQuery.fn 是 jQuery.prototype 的简写
+// 覆盖jQuery的原型对象：防止使用jQuery过多而占用太多内存
 jQuery.fn = jQuery.prototype = {
 
 	// The current version of jQuery being used
@@ -112,7 +114,7 @@ jQuery.fn = jQuery.prototype = {
 		return this.prevObject || this.constructor();
 	}
 };
-
+// 定义一堆静态属性和方法
 jQuery.extend = jQuery.fn.extend = function() {
 	var options, name, src, copy, copyIsArray, clone,
 		target = arguments[ 0 ] || {},
